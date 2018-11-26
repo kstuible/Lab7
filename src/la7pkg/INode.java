@@ -1,6 +1,6 @@
 package la7pkg;
 
-public interface INode {
+public interface INode<E> {
 
 	// Returns the data stored in this node.
 	E getData();
