@@ -1,13 +1,13 @@
 package la7pkg;
 
+import java.io.BufferedReader;
+
 public class Controller implements IController {
 
 	public Controller(PriorityQueue<Request> requestQueue, LinkedList<Course> courses,
 			BufferedReader fileIn, BufferedReader fileIn1) {
 		
 	}
-
-	
 	
 	@Override
 	public void readCourseFile() {

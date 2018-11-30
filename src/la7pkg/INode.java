@@ -9,6 +9,6 @@ public interface INode<E> {
 	Node<E> getNext();
 	
 	// Sets node received as the next node to this node.
-	void setNext(Node<E> next);
+	void setNext(Node<E> nextNode);
 
 }

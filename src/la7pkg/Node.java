@@ -1,8 +1,8 @@
 package la7pkg;
 
-public class Node<E> implements INode {
+public class Node<E> implements INode<E> {
 
-	static Node next;
+	Node<E> next;
 	E value;
 	
 	// Constructor
@@ -17,20 +17,20 @@ public class Node<E> implements INode {
 		next = nextNode;
 	}
 	
+	
 	@Override
 	public E getData() {
-		
 		return value;
 	}
  
 	@Override
-	public Node getNext() {
+	public Node<E> getNext() {
 		return next;
 	}
 
 	@Override
-	public void setNext(Node next) {
-		Node.next = next;
+	public void setNext(Node<E> nextNode) {
+		next = nextNode;
 	}
 
 	
