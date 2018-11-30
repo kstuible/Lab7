@@ -37,6 +37,13 @@ public class PriorityQueue<E> {
 	
 	// Print the contents of the queue 
 	public void Qprint() {	
-	
+		StringBuilder buildr = new StringBuilder();
+		
+		Node<E> p = front;
+		while(p != null) {
+			buildr.append(p.value + "\n");
+			p = p.next;
+		}
+		System.out.println(buildr.toString());
 	}
 }
