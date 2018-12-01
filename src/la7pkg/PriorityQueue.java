@@ -40,6 +40,7 @@ public class PriorityQueue<E> {
 		StringBuilder buildr = new StringBuilder();
 		
 		Node<E> p = front;
+		
 		while(p != null) {
 			buildr.append(p.value + "\n");
 			p = p.next;

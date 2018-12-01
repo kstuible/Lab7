@@ -32,7 +32,6 @@ public class LinkedList<E> {
 		}
 	}
 	
-	
 	// get the object in specific position in the LinkedList used to print the 
 	// enrolled student contents inside the Course class and return the name
 	public E get(int position) {

@@ -1,22 +1,35 @@
 package la7pkg;
 
-public class Course implements ICourse {
+public class Course<E> implements ICourse {
 
+	String dept;
+	int courseNum;
+	int cap;
+	int stuInCourse;
+	String stuName;
+	
+	LinkedList<E> stu1040 = new LinkedList<E>();
+	LinkedList<E> stu1060 = new LinkedList<E>();
+	
 	@Override
 	public boolean isFull() {
-		// TODO Auto-generated method stub
-		return false;
+
+		if(stuInCourse < cap) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	@Override
 	public void addStudent(String name) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void printClassList() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
