@@ -27,17 +27,24 @@ public class Controller implements IController {
 	@Override
 	public void readCourseFile() {
 		try {
-			LinkedList<String> courses = new LinkedList<>();
+			LinkedList<String> crsString = new LinkedList<>();
 			String line = "";
 			while((line =fileIn0.readLine()) != null) {
-				courses.add(line);
+				crsString.add(line);
 			}
 			
-			// testing input and contents
-			System.out.println(courses.get(0));
-			System.out.println(courses.get(1));
-			// to test invalid index
-			//System.out.println(courses.get(2));
+			LinkedList<Course> courses = new LinkedList<>();
+			
+			for(int i = 0; i < crsString.size(); i++) {
+				String crsLine = crsString.get(i);
+				String[] crsArr = crsLine.split(",");
+				Course nuCourse = new Course(crsArr[0], crsArr[1], Integer.parseInt(crsArr[2]));
+				
+				courses.add(nuCourse);
+				
+				// testing object contents
+				// System.out.println(courses.get(i).courseNum);
+			}
 
 			
 			fileIn0.close();
@@ -53,17 +60,31 @@ public class Controller implements IController {
 	@Override
 	public void readRequestFile() {
 		try {
+			// reads the file to strings and converts
 			LinkedList<String> requests = new LinkedList<>();
 			String line = "";
 			while((line =fileIn10.readLine()) != null) {
 				requests.add(line);
 			}
 			
-			// testing input and contents
-			System.out.println(requests.get(0));
-			System.out.println(requests.get(1));
-			System.out.println(requests.get(2));
+			LinkedList<Request> reqs = new LinkedList<>(); 
 			
+			// builds linkedList of request objects
+			for(int i = 0; i < requests.size(); i++) {
+				String reqLine = requests.get(i);
+				String[] lineArr = reqLine.split(",");
+				double grades[][] = {{3.0, 3},{2.0, 2}};
+				int crsNum = Integer.parseInt(lineArr[4]);
+				
+				Request nuReq = new Request(lineArr[0], lineArr[1], lineArr[2],
+				 lineArr[3], crsNum, grades);
+				reqs.add(nuReq);
+				
+				// test contents
+				// System.out.print(reqs.get(i).stuName + " ");
+				// System.out.println(reqs.get(i).crsDept);
+
+			}
 			
 			fileIn10.close();
 

@@ -3,13 +3,16 @@ package la7pkg;
 public class Course<E> implements ICourse {
 
 	String dept;
-	int courseNum;
+	String courseNum;
 	int cap;
 	int stuInCourse;
 	String stuName;
 	
-	//LinkedList<E> stu1040 = new LinkedList<E>();
-	//LinkedList<E> stu1060 = new LinkedList<E>();
+	public Course(String department, String number, int capacity) {
+		dept = department;
+		courseNum = number;
+		cap = capacity;
+	}
 	
 	@Override
 	public boolean isFull() {

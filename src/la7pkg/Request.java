@@ -11,13 +11,14 @@ public class Request<T> implements Comparable<T> {
 	
 	@Override
 	public int compareTo(T o) {
-		// TODO Auto-generated method stub
-		return 0;
+	
+		return compareTo(o);
 	}
 
 	// Constructor
 	public Request(String studentName, String studentDept, String studentLevel,
 				String courseDept, int courseNumber, double[][] GPA_Array) {
+		
 		 stuName = studentName;
 		 stuDept = studentDept;
 		 stuLevel = studentLevel;
