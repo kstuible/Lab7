@@ -33,14 +33,14 @@ public class Controller implements IController {
 				crsString.add(line);
 			}
 			
-			LinkedList<Course> courses = new LinkedList<>();
+			//LinkedList<Course> courses = new LinkedList<>();
 			
 			for(int i = 0; i < crsString.size(); i++) {
 				String crsLine = crsString.get(i);
 				String[] crsArr = crsLine.split(",");
 				Course nuCourse = new Course(crsArr[0], Integer.parseInt(crsArr[1]), Integer.parseInt(crsArr[2]));
 				
-				courses.add(nuCourse);
+				courses0.add(nuCourse);
 				
 				// testing object contents
 				// System.out.println(courses.get(i).courseNum);
@@ -67,7 +67,7 @@ public class Controller implements IController {
 				requests.add(line);
 			}
 			
-			LinkedList<Request> reqs = new LinkedList<>(); 
+			 LinkedList<Request> reqs = new LinkedList<>(); 
 			
 			// builds linkedList of request objects
 			for(int i = 0; i < requests.size(); i++) {

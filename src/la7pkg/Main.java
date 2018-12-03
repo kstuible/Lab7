@@ -19,7 +19,7 @@ public class Main {
 		control.printClassList();
 
 		// testing
-		System.out.print(courses.get(0).toString());
+		System.out.print(courses.get(0).courseNum);
 	}
 
 }
