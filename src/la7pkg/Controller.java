@@ -27,8 +27,15 @@ public class Controller implements IController {
 	@Override
 	public void readCourseFile() {
 		try {
+			LinkedList<String> courses = new LinkedList<>();
+			String line = "";
+			while((line =fileIn0.readLine()) != null) {
+				courses.add(line);
+			}
 			
-			
+			// testing input and contents
+			System.out.println(courses.get(0));
+			System.out.println(courses.get(1));
 			
 			fileIn0.close();
 		}

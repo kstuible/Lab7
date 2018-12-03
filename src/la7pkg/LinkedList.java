@@ -4,12 +4,14 @@ public class LinkedList<E> {
 
 	private Node<E> head;
 	private Node<E> tail;
-	//private int size = 0;
+	private E value;
 	
+	LinkedList<E> list;
 	
 	public LinkedList() {
 		head = null;
 		tail = null;
+		value = null;
 		//size = 0;
 	}
 	
@@ -35,7 +37,13 @@ public class LinkedList<E> {
 	// get the object in specific position in the LinkedList used to print the 
 	// enrolled student contents inside the Course class and return the name
 	public E get(int position) {
-		return null;
+		Node<E> ref = head;
+		for(int i = 0; i < position; i++) {
+			value = ref.value;
+			ref = ref.next;
+		}
+		
+		return ref.value;
 		
 	}
 	
