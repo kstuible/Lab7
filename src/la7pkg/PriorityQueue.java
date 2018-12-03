@@ -4,7 +4,7 @@ public class PriorityQueue<E> {
 
 	private Node<E> front = null;
 	private Node<E> rear = null;
-	//E value;
+	E value;
 	
 	// Determine if the priority queue is empty.
 	public boolean isEmpty() {
@@ -27,7 +27,7 @@ public class PriorityQueue<E> {
 	// Remove the next object to be processed from the priority queue.
 	public E dequeue() {
 		
-		E value = front.value;
+		value = front.value;
 		front = front.next;
 		if(front == null) {
 			rear = null;

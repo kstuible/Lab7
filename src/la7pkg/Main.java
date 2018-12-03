@@ -18,6 +18,8 @@ public class Main {
 		control.processRequests();
 		control.printClassList();
 
+		// testing
+		System.out.print(courses.get(0).toString());
 	}
 
 }
