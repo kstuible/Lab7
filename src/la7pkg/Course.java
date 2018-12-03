@@ -8,8 +8,8 @@ public class Course<E> implements ICourse {
 	int stuInCourse;
 	String stuName;
 	
-	LinkedList<E> stu1040 = new LinkedList<E>();
-	LinkedList<E> stu1060 = new LinkedList<E>();
+	//LinkedList<E> stu1040 = new LinkedList<E>();
+	//LinkedList<E> stu1060 = new LinkedList<E>();
 	
 	@Override
 	public boolean isFull() {

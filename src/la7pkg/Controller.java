@@ -36,6 +36,9 @@ public class Controller implements IController {
 			// testing input and contents
 			System.out.println(courses.get(0));
 			System.out.println(courses.get(1));
+			// to test invalid index
+			//System.out.println(courses.get(2));
+
 			
 			fileIn0.close();
 		}
@@ -50,9 +53,16 @@ public class Controller implements IController {
 	@Override
 	public void readRequestFile() {
 		try {
-
-
+			LinkedList<String> requests = new LinkedList<>();
+			String line = "";
+			while((line =fileIn10.readLine()) != null) {
+				requests.add(line);
+			}
 			
+			// testing input and contents
+			System.out.println(requests.get(0));
+			System.out.println(requests.get(1));
+			System.out.println(requests.get(2));
 			
 			
 			fileIn10.close();

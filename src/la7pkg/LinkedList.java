@@ -37,14 +37,18 @@ public class LinkedList<E> {
 	// get the object in specific position in the LinkedList used to print the 
 	// enrolled student contents inside the Course class and return the name
 	public E get(int position) {
-		Node<E> ref = head;
-		for(int i = 0; i < position; i++) {
-			value = ref.value;
-			ref = ref.next;
+		if(position >= size() || position < 0) {
+			System.out.print("Invalid Index: Returning ");
+			return null;
 		}
-		
-		return ref.value;
-		
+		else {
+			Node<E> ref = head;
+			for(int i = 0; i < position; i++) {
+				value = ref.value;
+				ref = ref.next;
+			}
+			return ref.value;
+		}
 	}
 	
 	// Return number of elements in the list.
