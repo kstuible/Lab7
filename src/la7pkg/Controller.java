@@ -38,7 +38,7 @@ public class Controller implements IController {
 			for(int i = 0; i < crsString.size(); i++) {
 				String crsLine = crsString.get(i);
 				String[] crsArr = crsLine.split(",");
-				Course nuCourse = new Course(crsArr[0], crsArr[1], Integer.parseInt(crsArr[2]));
+				Course nuCourse = new Course(crsArr[0], Integer.parseInt(crsArr[1]), Integer.parseInt(crsArr[2]));
 				
 				courses.add(nuCourse);
 				

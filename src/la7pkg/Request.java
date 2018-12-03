@@ -59,6 +59,19 @@ public class Request<T> implements Comparable<T> {
 	}
 
 	// Getters for a student’s name and department, and the department and number of a course
+	public String getName() {
+		return stuName;
+	}
 	
+	public String getStuDept() {
+		return stuDept;
+	}
 	
+	public String getCrsDept() {
+		return crsDept;
+	}
+	
+	public int getNum() {
+		return crsNum;
+	}
 }

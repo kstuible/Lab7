@@ -3,12 +3,12 @@ package la7pkg;
 public class Course<E> implements ICourse {
 
 	String dept;
-	String courseNum;
+	int courseNum;
 	int cap;
 	int stuInCourse;
 	String stuName;
 	
-	public Course(String department, String number, int capacity) {
+	public Course(String department, int number, int capacity) {
 		dept = department;
 		courseNum = number;
 		cap = capacity;
