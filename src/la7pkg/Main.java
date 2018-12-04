@@ -19,8 +19,10 @@ public class Main {
 		control.printClassList();
 
 		// testing -- delete later
-		System.out.println(control.getCourse("CS", 1060).cap);
-		System.out.print(courses.get(0).courseNum);
+		//courses.get(0).addStudent("Buck");
+		//courses.get(0).printClassList();
+		//System.out.println(control.getCourse("CS", 1060).courseNum);
+		//System.out.print(courses.get(0).courseNum);
 	}
 
 }

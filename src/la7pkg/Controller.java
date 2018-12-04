@@ -108,7 +108,7 @@ public class Controller implements IController {
 	// student could not be registered.
 	@Override
 	public void processRequests() {
-
+		
 		
 	}
 
@@ -119,16 +119,18 @@ public class Controller implements IController {
 		for(int i = 0; i < courses0.size(); i++) {
 			if(courses0.get(i).dept.equals(courseDept) && courses0.get(i).courseNum == courseNumber) {
 				match = courses0.get(i);
-			}
-		}
-		
+			} 
+		}	
 		return match;
 	}
 
 	// Print class lists for all courses.
 	@Override
 	public void printClassList() {
-
+		for(int i = 0; i < courses0.size(); i++) {
+			System.out.println("Class List for " + courses0.get(i).dept + courses0.get(i).courseNum + ":");
+			courses0.get(i).printClassList();
+		}
 		
 	}
 
