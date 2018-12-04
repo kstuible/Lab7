@@ -10,6 +10,7 @@ public class Controller implements IController {
 	BufferedReader fileIn0;
 	BufferedReader fileIn10;
 	LinkedList<Request> reqs = new LinkedList<>(); 
+	LinkedList<Request> orderReqs = new LinkedList<>();
 
 	
 	// constructor
@@ -116,7 +117,11 @@ public class Controller implements IController {
 		// will have to change this for priority
 		for(int i = 0; i < reqs.size(); i++) {
 			
-			addRequest(reqs.get(i));
+			
+			
+			
+			
+			//addRequest(reqs.get(i));
 			
 		}
 				
