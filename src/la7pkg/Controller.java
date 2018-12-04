@@ -133,7 +133,6 @@ public class Controller implements IController {
 			addRequest(reqs.get(i));
 		}
 		
-		
 		System.out.println("<<<<<<<<<<<< Beginning of Queue Contents >>>>>>>>>>>>>>>>>");
 		requestQueue0.Qprint();
 		System.out.println("<<<<<<<<<<<< End of Queue Contents >>>>>>>>>>>>>>>>>\n");
