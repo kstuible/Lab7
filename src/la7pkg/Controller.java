@@ -107,11 +107,9 @@ public class Controller implements IController {
 	// Store the request object in the requests priority queue.
 	@Override
 	public void addRequest(Request req) {
-//		for(int i = 0; i < reqs.size(); i++) {
-//			req = reqs.get(i);
-//		
-//			requestQueue0.enqueue(req);
-//		}
+		
+			requestQueue0.enqueue(req);
+		
 		
 	/*	String reqName = req.stuName;
 		String reqStuDept = req.stuDept;
@@ -130,10 +128,30 @@ public class Controller implements IController {
 	@Override
 	public void processRequests() {
 		for(int i = 0; i < reqs.size(); i++) {
-			
+			addRequest(reqs.get(i));
 		}
-		
+		System.out.println("<<<<<<<<<<<< Beginning of Queue Contents >>>>>>>>>>>>>>>>>");
 		requestQueue0.Qprint();
+		System.out.println("<<<<<<<<<<<< End of Queue Contents >>>>>>>>>>>>>>>>>\n");
+
+		for(int j = 0; !requestQueue0.isEmpty(); j++) {
+			Request reqRef = requestQueue0.dequeue();
+			
+			if(!getCourse(reqRef.getCrsDept(), reqRef.getNum()).isFull()) {
+				getCourse(reqRef.getCrsDept(), reqRef.getNum()).addStudent(reqRef.getName());
+				getCourse(reqRef.getCrsDept(), reqRef.getNum()).stuInCourse += 1;
+				System.out.println(reqRef + " processed.");
+				System.out.println(reqRef.getName() + " sucessfully registered " 
+						+ reqRef.getCrsDept()+ " " + reqRef.getNum());
+			}
+			else {
+				getCourse(reqRef.getCrsDept(), reqRef.getNum()).addStudent(reqRef.getName());
+				getCourse(reqRef.getCrsDept(), reqRef.getNum()).stuInCourse += 1;
+				System.out.println(reqRef + " processed.");
+				System.out.println(reqRef.getName() + " cannot register for " 
+						+ reqRef.getCrsDept()+ " " + reqRef.getNum());
+			}
+		}
 		
 		
 	}
@@ -154,7 +172,7 @@ public class Controller implements IController {
 	@Override
 	public void printClassList() {
 		for(int i = 0; i < courses0.size(); i++) {
-			System.out.println("Class List for " + courses0.get(i).dept + " " + courses0.get(i).courseNum + ":");
+			System.out.println("\nClass List for " + courses0.get(i).dept + " " + courses0.get(i).courseNum + ":");
 			courses0.get(i).printClassList();
 		}
 		

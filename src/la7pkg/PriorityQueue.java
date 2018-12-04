@@ -42,7 +42,7 @@ public class PriorityQueue<E> {
 		Node<E> p = front;
 		
 		while(p != null) {
-			System.out.println(p.toString());
+			System.out.println(p.value);
 			p = p.next;
 		}
 		//System.out.println(buildr.toString());
