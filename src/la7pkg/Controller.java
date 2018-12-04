@@ -115,7 +115,9 @@ public class Controller implements IController {
 		
 		// will have to change this for priority
 		for(int i = 0; i < reqs.size(); i++) {
+			
 			addRequest(reqs.get(i));
+			
 		}
 				
 		System.out.println("<<<<<<<<<<<< Beginning of Queue Contents >>>>>>>>>>>>>>>>>");
