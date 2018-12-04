@@ -127,9 +127,13 @@ public class Controller implements IController {
 	// student could not be registered.
 	@Override
 	public void processRequests() {
+		
+		// will have to change this for priority
 		for(int i = 0; i < reqs.size(); i++) {
 			addRequest(reqs.get(i));
 		}
+		
+		
 		System.out.println("<<<<<<<<<<<< Beginning of Queue Contents >>>>>>>>>>>>>>>>>");
 		requestQueue0.Qprint();
 		System.out.println("<<<<<<<<<<<< End of Queue Contents >>>>>>>>>>>>>>>>>\n");
