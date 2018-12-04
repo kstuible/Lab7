@@ -8,6 +8,7 @@ public class Request<T> implements Comparable<T> {
 	String crsDept;
 	int crsNum;
 	double[][] GPA;
+
 	
 	@Override
 	public int compareTo(T o) {
@@ -15,6 +16,7 @@ public class Request<T> implements Comparable<T> {
 		return compareTo(o);
 	}
 
+	
 	// Constructor
 	public Request(String studentName, String studentDept, String studentLevel,
 				String courseDept, int courseNumber, double[][] GPA_Array) {

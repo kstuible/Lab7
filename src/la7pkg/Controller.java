@@ -1,7 +1,6 @@
 package la7pkg;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class Controller implements IController {
