@@ -55,9 +55,22 @@ public class Request<T> implements Comparable<T> {
 
 	// Calculate the GPA for a particular student.
 	private double GPA_Cal(double[][] GPA_Array) {
-	
-		return 0;
-		
+		double gpa = 0;
+		double sum = 0;
+		double credits = 0;
+		int length = GPA_Array.length;
+		for(int i=0; i<length; i++) {
+			for(int j=0; j<2; j++) {
+				if(j==0) {
+					sum += GPA_Array[i][j];
+				}
+				else {
+					credits += GPA_Array[i][j];
+				}
+			}
+		}
+		gpa = (sum * credits)/credits;
+		return gpa;
 	}
 
 	// Getters for a student’s name and department, and the department and number of a course
