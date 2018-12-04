@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Controller implements IController {
 
-	PriorityQueue<Request> requestQueue0 = new PriorityQueue<>();
+	PriorityQueue<Request> requestQueue0;
 	LinkedList<Course> courses0;;
 	BufferedReader fileIn0;
 	BufferedReader fileIn10;
