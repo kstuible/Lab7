@@ -18,6 +18,8 @@ public class Main {
 		control.processRequests();
 		control.printClassList();
 
+
+		
 		// testing -- delete later
 		//courses.get(0).addStudent("Buck");
 		//courses.get(0).printClassList();

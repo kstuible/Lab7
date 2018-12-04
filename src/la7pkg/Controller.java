@@ -5,10 +5,12 @@ import java.io.IOException;
 
 public class Controller implements IController {
 
-	PriorityQueue<Request> requestQueue0;
+	PriorityQueue<Request> requestQueue0 = new PriorityQueue<>();
 	LinkedList<Course> courses0;;
 	BufferedReader fileIn0;
 	BufferedReader fileIn10;
+	LinkedList<Request> reqs = new LinkedList<>(); 
+
 	
 	// constructor
 	public Controller(PriorityQueue<Request> requestQueue, LinkedList<Course> courses,
@@ -65,14 +67,22 @@ public class Controller implements IController {
 			while((line =fileIn10.readLine()) != null) {
 				requests.add(line);
 			}
-			
-			 LinkedList<Request> reqs = new LinkedList<>(); 
-			
+						
 			// builds linkedList of request objects
 			for(int i = 0; i < requests.size(); i++) {
 				String reqLine = requests.get(i);
 				String[] lineArr = reqLine.split(",");
-				double grades[][] = {{3.0, 3},{2.0, 2}};
+				
+				//double[] gradeArr = new double[(lineArr.length-4)/2];
+				//double[] credArr = new double[(lineArr.length-4)/2];
+				
+				double[] gradeArr = {Double.parseDouble(lineArr[5]), Double.parseDouble(lineArr[7]),
+						Double.parseDouble(lineArr[9]), Double.parseDouble(lineArr[11]) };
+				double[] credArr = {Double.parseDouble(lineArr[6]), Double.parseDouble(lineArr[8]),
+						Double.parseDouble(lineArr[10]), Double.parseDouble(lineArr[12]) };
+	
+				double grades[][] = {gradeArr, credArr};
+				//double grades[][] = {{3.0, 3},{2.0, 2}};
 				int crsNum = Integer.parseInt(lineArr[4]);
 				
 				Request nuReq = new Request(lineArr[0], lineArr[1], lineArr[2],
@@ -80,7 +90,7 @@ public class Controller implements IController {
 				reqs.add(nuReq);
 				
 				// test contents
-				// System.out.print(reqs.get(i).stuName + " ");
+				// System.out.println(reqs.get(i).calcGPA + " ");
 				// System.out.println(reqs.get(i).crsDept);
 
 			}
@@ -97,7 +107,19 @@ public class Controller implements IController {
 	// Store the request object in the requests priority queue.
 	@Override
 	public void addRequest(Request req) {
-
+//		for(int i = 0; i < reqs.size(); i++) {
+//			req = reqs.get(i);
+//		
+//			requestQueue0.enqueue(req);
+//		}
+		
+	/*	String reqName = req.stuName;
+		String reqStuDept = req.stuDept;
+		int reqStuLev = req.yearsFromGraduation(req.stuLevel);
+		String reqCrsDept = req.crsDept;
+		int reqCrsNum = req.crsNum;
+		double reqGPA = req.calcGPA;
+	*/	
 		
 	}
 
@@ -107,6 +129,11 @@ public class Controller implements IController {
 	// student could not be registered.
 	@Override
 	public void processRequests() {
+		for(int i = 0; i < reqs.size(); i++) {
+			
+		}
+		
+		requestQueue0.Qprint();
 		
 		
 	}
@@ -127,7 +154,7 @@ public class Controller implements IController {
 	@Override
 	public void printClassList() {
 		for(int i = 0; i < courses0.size(); i++) {
-			System.out.println("Class List for " + courses0.get(i).dept + courses0.get(i).courseNum + ":");
+			System.out.println("Class List for " + courses0.get(i).dept + " " + courses0.get(i).courseNum + ":");
 			courses0.get(i).printClassList();
 		}
 		

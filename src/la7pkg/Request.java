@@ -8,6 +8,7 @@ public class Request<T> implements Comparable<T> {
 	String crsDept;
 	int crsNum;
 	double[][] GPA;
+	double calcGPA;
 
 	
 	@Override
@@ -27,6 +28,7 @@ public class Request<T> implements Comparable<T> {
 		 crsDept = courseDept;
 		 crsNum = courseNumber;
 		 GPA = GPA_Array;
+		 calcGPA = GPA_Cal(GPA_Array);
 		
 	}
 	
