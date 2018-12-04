@@ -18,7 +18,8 @@ public class Main {
 		control.processRequests();
 		control.printClassList();
 
-		// testing
+		// testing -- delete later
+		System.out.println(control.getCourse("CS", 1060).cap);
 		System.out.print(courses.get(0).courseNum);
 	}
 

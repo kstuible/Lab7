@@ -115,9 +115,14 @@ public class Controller implements IController {
 	// Return the course object with data values that match the parameters received.
 	@Override
 	public Course getCourse(String courseDept, int courseNumber) {
+		Course match = null;
+		for(int i = 0; i < courses0.size(); i++) {
+			if(courses0.get(i).dept.equals(courseDept) && courses0.get(i).courseNum == courseNumber) {
+				match = courses0.get(i);
+			}
+		}
 		
-		
-		return null;
+		return match;
 	}
 
 	// Print class lists for all courses.
