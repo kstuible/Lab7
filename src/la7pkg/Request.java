@@ -9,7 +9,7 @@ public class Request<T> implements Comparable<T> {
 	int crsNum;
 	double[][] GPA;
 	double calcGPA;
-
+	int yearsFromGrad;
 	
 	@Override
 	public int compareTo(T o) {
@@ -36,18 +36,18 @@ public class Request<T> implements Comparable<T> {
 	// Returns number of years to graduation (0 for seniors, 1 for juniors etc.). This is determined from the 
 	// student’s level – senior, junior, etc.
 	public int yearsFromGraduation(String level) {
-		int yearsFromGrad = 0;
 		
-		if(level.equals("Senior")) {
+		if(level.equals("Senior") || level.equals(" Senior")) {
 			yearsFromGrad = 0;
 		}
-		if(level.equals("Junior")) {
+		else if(level.equals("Junior") || level.equals(" Junior")) {
 			yearsFromGrad = 1;
 		}
-		if(level.equals("Sophomore")) {
+		else if(level.equals("Sophomore") || level.equals(" Sophomore")) {
 			yearsFromGrad = 2;
 		}
-		if(level.equals("Freshman")) {
+		else //(level.equals("Freshman")) 
+		{
 			yearsFromGrad = 3;
 		}
 		

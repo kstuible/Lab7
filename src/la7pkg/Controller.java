@@ -73,9 +73,6 @@ public class Controller implements IController {
 				String reqLine = requests.get(i);
 				String[] lineArr = reqLine.split(",");
 				
-				//double[] gradeArr = new double[(lineArr.length-4)/2];
-				//double[] credArr = new double[(lineArr.length-4)/2];
-				
 				double[] gradeArr = {Double.parseDouble(lineArr[5]), Double.parseDouble(lineArr[7]),
 						Double.parseDouble(lineArr[9]), Double.parseDouble(lineArr[11]) };
 				double[] credArr = {Double.parseDouble(lineArr[6]), Double.parseDouble(lineArr[8]),
@@ -85,13 +82,10 @@ public class Controller implements IController {
 				//double grades[][] = {{3.0, 3},{2.0, 2}};
 				int crsNum = Integer.parseInt(lineArr[4]);
 				
-				Request nuReq = new Request(lineArr[0], lineArr[1], lineArr[2],
+				Request nuReq = new Request(lineArr[0], lineArr[2], lineArr[1],
 				 lineArr[3], crsNum, grades);
 				reqs.add(nuReq);
 				
-				// test contents
-				// System.out.println(reqs.get(i).calcGPA + " ");
-				// System.out.println(reqs.get(i).crsDept);
 
 			}
 			
@@ -110,15 +104,6 @@ public class Controller implements IController {
 		
 			requestQueue0.enqueue(req);
 		
-		
-	/*	String reqName = req.stuName;
-		String reqStuDept = req.stuDept;
-		int reqStuLev = req.yearsFromGraduation(req.stuLevel);
-		String reqCrsDept = req.crsDept;
-		int reqCrsNum = req.crsNum;
-		double reqGPA = req.calcGPA;
-	*/	
-		
 	}
 
 	// Process all the requests as follows: if request can be granted, update the relevant classlist, 
@@ -132,7 +117,7 @@ public class Controller implements IController {
 		for(int i = 0; i < reqs.size(); i++) {
 			addRequest(reqs.get(i));
 		}
-		
+				
 		System.out.println("<<<<<<<<<<<< Beginning of Queue Contents >>>>>>>>>>>>>>>>>");
 		requestQueue0.Qprint();
 		System.out.println("<<<<<<<<<<<< End of Queue Contents >>>>>>>>>>>>>>>>>\n");
