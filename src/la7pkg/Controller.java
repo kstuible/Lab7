@@ -117,11 +117,7 @@ public class Controller implements IController {
 		// will have to change this for priority
 		for(int i = 0; i < reqs.size(); i++) {
 			
-			
-			
-			
-			
-			//addRequest(reqs.get(i));
+			addRequest(reqs.get(i));
 			
 		}
 				
@@ -141,14 +137,11 @@ public class Controller implements IController {
 			}
 			else {
 				getCourse(reqRef.getCrsDept(), reqRef.getNum()).addStudent(reqRef.getName());
-				getCourse(reqRef.getCrsDept(), reqRef.getNum()).stuInCourse += 1;
 				System.out.println(reqRef + " processed.");
 				System.out.println(reqRef.getName() + " cannot register for " 
 						+ reqRef.getCrsDept()+ " " + reqRef.getNum());
 			}
-		}
-		
-		
+		}	
 	}
 
 	// Return the course object with data values that match the parameters received.

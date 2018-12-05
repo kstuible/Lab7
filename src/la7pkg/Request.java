@@ -1,6 +1,6 @@
 package la7pkg;
 
-public class Request<T> implements Comparable<T> {
+public class Request implements Comparable<Request> {
 
 	String stuName;
 	String stuDept;
@@ -12,9 +12,24 @@ public class Request<T> implements Comparable<T> {
 	int yearsFromGrad;
 	
 	@Override
-	public int compareTo(T o) {
-	
-		return compareTo(o);
+	public int compareTo(Request o) {
+		int comp = 0;
+		if((this.crsDept.equals(this.stuDept)) && (!o.crsDept.equals(o.stuDept))) {
+			return 1;
+		} else if((!this.crsDept.equals(this.stuDept)) && (o.crsDept.equals(o.stuDept))) {
+			return -1;
+		} else if ((this.yearsFromGraduation(this.stuLevel)) < (o.yearsFromGraduation(o.stuLevel))){
+			return 1;
+		} else if ((this.yearsFromGraduation(this.stuLevel)) >= (o.yearsFromGraduation(o.stuLevel))){
+			return -1;
+		} else if ((this.calcGPA) > (o.calcGPA)) {
+			return 1;
+		} else if ((this.calcGPA) <= (o.calcGPA)) {
+			return -1;
+		} else {
+			return 0;
+		}
+
 	}
 
 	

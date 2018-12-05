@@ -18,8 +18,6 @@ public class Main {
 		control.processRequests();
 		control.printClassList();
 
-
 	}
 
 }
-
