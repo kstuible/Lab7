@@ -9,7 +9,7 @@ public class PriorityQueue<E extends Comparable<E>> {
 	/**
 	 * Checks if the 'front' node is empty
 	 * 
-	 * @return true/false
+	 * @return true/false   boolean
 	 */
 	public boolean isEmpty() {
 		
@@ -24,7 +24,7 @@ public class PriorityQueue<E extends Comparable<E>> {
 	 * new node to the front. If not, we create a new node in the middle of
 	 * the list.
 	 * 
-	 * @param data
+	 * @param data   data of type E
 	 */
 	public void enqueue(E data) {
 		Node<E> ref = front;
@@ -66,7 +66,7 @@ public class PriorityQueue<E extends Comparable<E>> {
 	/**
 	 * Removes the next object to be processed from the priority queue.
 	 * 
-	 * @return value
+	 * @return value  new value
 	 */
 	public E dequeue() {
 		
@@ -78,12 +78,11 @@ public class PriorityQueue<E extends Comparable<E>> {
 		return value;
 	}
 	
-	// Print the contents of the queue 
+
 	/**
-	 * 
+	 * Prints the contents of the queue
 	 */
 	public void Qprint() {	
-		//StringBuilder buildr = new StringBuilder();
 		
 		Node<E> p = front;
 		
@@ -91,6 +90,6 @@ public class PriorityQueue<E extends Comparable<E>> {
 			System.out.println(p.value);
 			p = p.next;
 		}
-		//System.out.println(buildr.toString());
+		
 	}
 }

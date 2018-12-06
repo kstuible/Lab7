@@ -44,12 +44,12 @@ public class Request implements Comparable<Request> {
 	/**
 	 * Constructor for Request object
 	 * 
-	 * @param studentName
-	 * @param studentDept
-	 * @param studentLevel
-	 * @param courseDept
-	 * @param courseNumber
-	 * @param GPA_Array
+	 * @param studentName   name
+	 * @param studentDept   student department
+	 * @param studentLevel   student level
+	 * @param courseDept    course department
+	 * @param courseNumber   course number
+	 * @param GPA_Array   array of one students GPAs
 	 */
 	public Request(String studentName, String studentDept, String studentLevel,
 				String courseDept, int courseNumber, double[][] GPA_Array) {
@@ -69,8 +69,8 @@ public class Request implements Comparable<Request> {
 	 * Compares the given string 'level' to each of the four rankings,
 	 * then assigns an integer (ie. '0' is closest to graduation)
 	 * 
-	 * @param level
-	 * @return yearsFromGrad
+	 * @param level   rank in school
+	 * @return yearsFromGrad  int 0-3
 	 */
 	public int yearsFromGraduation(String level) {
 		
@@ -98,8 +98,8 @@ public class Request implements Comparable<Request> {
 	 * for loops to sum up the GPAs and the number of credits to
 	 * calculate the average.
 	 * 
-	 * @param GPA_Array
-	 * @return average 
+	 * @param GPA_Array   one students array of GPAs
+	 * @return gpa   average of one students GPAs    
 	 */
 	private double GPA_Cal(double[][] GPA_Array) {
 		double gpa = 0;

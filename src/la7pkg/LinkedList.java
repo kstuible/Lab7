@@ -16,13 +16,21 @@ public class LinkedList<E> {
 	}
 	
 	
-	// Determine if the LinkedList is empty.
+	/**
+	 * Determines if the LinkedList is empty.
+	 * 
+	 * @return true/false   boolean
+	 */
 	public boolean isEmpty() {
 		return head == null;
 		
 	}
 	
-	// Add object received to the linked list if he/she has the priority.
+	/**
+	 * Adds object either as the first node or adds a node following the previous
+	 * 
+	 * @param item   type E
+	 */
 	public void add(E item) {
 		if(isEmpty()) {
 			head = new Node<E>(item);
@@ -34,6 +42,12 @@ public class LinkedList<E> {
 		}
 	}
 	
+	/**
+	 * checks if index is empty, then if index is zero, it creates and inserts a new node.
+	 * 
+	 * @param index   int
+	 * @param item   type E
+	 */
 	public void insert(int index, E item) {
 		if(index < 0 || index > size()) {
 			System.out.println("Invalid Index");
@@ -56,8 +70,12 @@ public class LinkedList<E> {
 		}
 	}
 	
-	// get the object in specific position in the LinkedList used to print the 
-	// enrolled student contents inside the Course class and return the name
+	/**
+	 *returns the ref value if the position given is valid
+	 * 
+	 * @param position   int, current position
+	 * @return value  new value of ref
+	 */
 	public E get(int position) {
 		if(position >= size() || position < 0) {
 			System.out.print("Invalid Index: Returning ");
@@ -73,7 +91,11 @@ public class LinkedList<E> {
 		}
 	}
 	
-	// Return number of elements in the list.
+	/**
+	 * counts the size of the list using a counter.
+	 * 
+	 * @return count   size
+	 */
 	public int size() {
 		int count = 0;
 		Node<E> p = head;

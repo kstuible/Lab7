@@ -24,8 +24,10 @@ public class Controller implements IController {
 		
 	}
 	
-	// Read courses from input file and add each course to a LinkedList of courses. Close file.
-	// use try/catch
+	/**
+	 * Reads from the course text file by line, then splits the line by comma
+	 * and creates a new course object.
+	 */
 	@Override
 	public void readCourseFile() {
 		try {
@@ -57,8 +59,11 @@ public class Controller implements IController {
 		
 	}
 
-	// Read each request from the request input file and use it to create a Request object.
-	// use try/catch
+	/**
+	 * reads from the request text file by line, then splits and assigns values to
+	 * a double grade array, a double credits array, and course number. Then creates
+	 * new request object given the values from the file.
+	 */
 	@Override
 	public void readRequestFile() {
 		try {
@@ -99,7 +104,11 @@ public class Controller implements IController {
 		
 	}
 
-	// Store the request object in the requests priority queue.
+	/**
+	 * Stores the request object in the requests priority queue.
+	 * 
+	 * @param req   request object
+	 */
 	@Override
 	public void addRequest(Request req) {
 		
@@ -111,6 +120,11 @@ public class Controller implements IController {
 	// update the class/course capacity, print out a message that the student who made that 
 	// request has been successfully registered for that course. Else, print out a message that 
 	// student could not be registered.
+	
+	/**
+	 * Based on the requests from the priority queue, add students to the course if there
+	 * open spots.
+	 */
 	@Override
 	public void processRequests() {
 		
@@ -144,7 +158,13 @@ public class Controller implements IController {
 		}	
 	}
 
-	// Return the course object with data values that match the parameters received.
+	/**
+	 * searches for and returns a course, given the department and course number.
+	 * 
+	 * @param courseDept   course department
+	 * @param courseNumber   course number
+	 * @return match    matched course
+	 */
 	@Override
 	public Course getCourse(String courseDept, int courseNumber) {
 		Course match = null;
@@ -156,7 +176,9 @@ public class Controller implements IController {
 		return match;
 	}
 
-	// Print class lists for all courses.
+	/**
+	 * Prints class lists for all courses.
+	 */
 	@Override
 	public void printClassList() {
 		for(int i = 0; i < courses0.size(); i++) {

@@ -12,9 +12,9 @@ public class Course<E> implements ICourse {
 	/**
 	 * Course constructor
 	 * 
-	 * @param department
-	 * @param number
-	 * @param capacity
+	 * @param department  course department
+	 * @param number   course number
+	 * @param capacity   course capacity
 	 */
 	public Course(String department, int number, int capacity) {
 		dept = department;
@@ -25,6 +25,8 @@ public class Course<E> implements ICourse {
 	
 	/**
 	 * Determines if the capacity for this course has been reached.
+	 * 
+	 * @return true/false   boolean
 	 */
 	@Override
 	public boolean isFull() {
@@ -41,7 +43,7 @@ public class Course<E> implements ICourse {
 	 * Adds student to class roster if its not full
 	 * and increments the number of students in the course.
 	 * 
-	 * @param name
+	 * @param name   name of student
 	 */
 	@Override
 	public void addStudent(String name) {
@@ -51,7 +53,9 @@ public class Course<E> implements ICourse {
 		}
 	}
 
-	// Print the classlist for this course.
+	/**
+	 * Prints the roster for this course.
+	 */
 	@Override
 	public void printClassList() {
 		for(int i = 0; i < roster.size(); i++) {
@@ -60,7 +64,11 @@ public class Course<E> implements ICourse {
 		
 	}
 	
-	// Determines if this course object is the same as the object received as parameter.
+	/**
+	 * compares two objects.
+	 * 
+	 * @param arg0  object
+	 */
 	@Override
 	public boolean equals(Object arg0) {
 		return  this.equals(arg0);

@@ -1,0 +1,230 @@
+Pseudocode-LA7-Kevin Stuible-Matt Kaz
+
+Class - Main
+	
+method(main)
+
+	-creates PriorityQueue of type 'Request'.
+	
+	-creates linkedlist of type 'Course'.
+
+	-reads the course and request text files with bufferedReader.
+
+	-creates Controller object and calls the following methods:
+		-readCourseFile()
+		-readRequestFile()
+		-processRequests()
+		-printClassList()
+
+Class- Controller
+
+method(readCourseFile)
+
+	-creates linkedlist and string.
+
+	-while there is a next line in the file, add the line to the linkedlist.
+
+	-using a for loop, split and add the line to a new course object.
+
+	-adds object to linkedlist of type 'course'.
+
+method(readRequestFile)
+
+	-creates linkedlist and string.
+
+	-while next line in file, add the line to the linkedlist.
+
+	-using a for loop, splits each line on the comma.
+
+	-assigns values to grades array and courseNumber.
+
+	-creates request object withe the values from the file.
+
+	-adds object to linkedlist of type 'request'.
+
+method(addRequest)
+
+	-stores the request object in the requests priority queue.
+
+method(processRequests)
+
+	-add each request in the file using for loop.
+
+	-prints out beginning of queue contents.
+
+	-checks if the course department is full, if not, add the student and increment 
+	number of students in course and prints registered.
+	
+	-else, print cannot register.
+
+method(getCourse)
+
+	-compares the given course department and course number to the linkedlist
+	of type 'course' inside a for loop.
+
+	-returns the match.
+
+method(printClassList)
+
+	-uses for loop to print out the class list of all the courses.
+	
+Class- Course
+
+method(isFull)
+
+	-checks if the number of students in the course is less than or equal to
+	the capacity for the course.
+
+	-if yes, return 'false'. Else, return 'true'.
+
+method(addStudent)
+
+	-checks if the class is full.
+
+	-if not, adds student to course and increments the number of students in
+	the course by 1.
+
+method(printClassList)
+
+	-for loop to print the roster.
+
+method(equals)
+
+	-compares the given object, returns true or false.
+	
+Class- LinkedList
+
+method(isEmpty)
+
+	-returns 'head' == null if is empty
+	
+method(add)
+
+	-adds object either as the first node or adds a node following the previous
+
+method(insert)
+
+	-checks if index is empty
+
+	-checks if index is zero, if it is, creates new node 'head'.
+
+	-else, node 'prev' = 'head'.
+
+method(get)
+
+	-checks if the position is valid, returns null if not.
+
+	-if valid, returns ref node value.
+	
+method(size)
+
+	-set int 'count' to zero and creates node 'p' = 'head'.
+
+	-while 'p' is not null, incriment the counter.
+
+	-return 'count'.
+
+Class- Node
+
+	-two constructors; one with a single paramater(dataValue), and one with two(dataValue, nextNode) 
+
+	-getters and setters to assign values to node 'next' and value.
+
+Class- PriorityQue
+
+method(isEmpty)
+
+	-checks if the front node is 'null'.
+	
+method(enqueue)
+
+	-creates node 'ref' and sets to front. (reference node)
+
+	-checks if rear is not 'null', if not, creates a new node rear and sets the front to it.
+
+	-if rear is null, we loop through, moving the 'ref' and comparing the data with the compareTo
+	function, checking for a '1' meaning it takes priority in the list.
+
+	-if 'ref' equals front, we add a new node to the front.
+
+	-if not, we create a new node and insert it after the node before the 'ref', and before the 'ref'.
+
+method(dequeue)
+
+	-moves value down in the list
+
+method(Qprint)
+
+	-creates node 'p' and set to front.
+
+	-while p is not null, print p.value then moves to the next node.
+	
+Class- Request
+
+method(compareTo)
+
+	-if this course department is equal to the student department
+	AND the given objects course department does not equal the given 
+	objects student departmen, reutrn '1'.
+
+	-else if this course department does not equal the student department
+	AND the given objects course department does equal the given 
+	objects student departmen, reutrn '-1'.
+
+	-else if this years from graduation is < the given objects years from
+	graduation, return '1'.
+
+	-else if this years from graduation is >= the given objects years from
+	graduation, return '-1'.
+
+	-else if this average GPA > the given objects average GPA, return '1'.
+
+	-else if this average GPA <= the given objects average GPA, return '1'.
+
+	-else return 0.
+
+method(Request)
+
+	-Constructor for Request object.
+	
+method(yearsFromGraduation)
+	
+	-if level is "Senior", years from graduation = 0.
+
+	-if level is "Junior", years from graduation = 1.
+
+	-if level is "Sophomore", years from graduation = 2.
+
+	-anything else returns a 3 (freshman)
+
+method(GPA_Cal)
+
+	-creates doubles: 'gpa', 'sum', 'value' and 'credits' then initializes them to zero.
+
+	-creates ints: 'row and 'col' and sets it to the dimensions of the array.
+
+	-creates two double arrays 'gpaArr' and 'creditsArr'
+
+	-sets the double arrays as the individual columns inside a nested for loop and
+	sums up the two arrays individualy
+	
+	-value is the sum of the product of the two arrays at a given point.
+
+	-calculates gpa.
+
+	
+method(getName)
+
+	returns name
+
+method(getStuDept)
+
+	returns the department the student is in
+
+method(getCrsDept)
+
+	returns the department the current course is in
+
+method(getNum)
+
+	returns course number
