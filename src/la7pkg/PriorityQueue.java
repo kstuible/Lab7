@@ -6,13 +6,26 @@ public class PriorityQueue<E extends Comparable<E>> {
 	private Node<E> rear = null;
 	E value;
 	
-	// Determine if the priority queue is empty.
+	/**
+	 * Checks if the 'front' node is empty
+	 * 
+	 * @return true/false
+	 */
 	public boolean isEmpty() {
 		
 		return front == null;
 	}
 	
-	// Add object received to the priority queue taking into consideration the rules governing priority.
+	/**
+	 * Checks if rear is null. If it is, 'data' is stored in 'rear', 
+	 * and 'rear' is store in 'front'. If not, we loop through, moving
+	 * the 'ref' and comparing the data with the compareTo function checking
+	 * for a '1' meaning it takes priority. If the 'ref' is the front, adds a
+	 * new node to the front. If not, we create a new node in the middle of
+	 * the list.
+	 * 
+	 * @param data
+	 */
 	public void enqueue(E data) {
 		Node<E> ref = front;
 
@@ -49,7 +62,12 @@ public class PriorityQueue<E extends Comparable<E>> {
 		}
 	}
 	
-	// Remove the next object to be processed from the priority queue.
+	
+	/**
+	 * Removes the next object to be processed from the priority queue.
+	 * 
+	 * @return value
+	 */
 	public E dequeue() {
 		
 		value = front.value;
@@ -61,6 +79,9 @@ public class PriorityQueue<E extends Comparable<E>> {
 	}
 	
 	// Print the contents of the queue 
+	/**
+	 * 
+	 */
 	public void Qprint() {	
 		//StringBuilder buildr = new StringBuilder();
 		

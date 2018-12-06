@@ -8,15 +8,24 @@ public class Course<E> implements ICourse {
 	int stuInCourse;
 	String stuName;
 	LinkedList<String> roster = new LinkedList<String>();
-	
-	// constr
+
+	/**
+	 * Course constructor
+	 * 
+	 * @param department
+	 * @param number
+	 * @param capacity
+	 */
 	public Course(String department, int number, int capacity) {
 		dept = department;
 		courseNum = number;
 		cap = capacity;
 	}
 	
-	// Determine if the capacity for this course has been reached.
+	
+	/**
+	 * Determines if the capacity for this course has been reached.
+	 */
 	@Override
 	public boolean isFull() {
 
@@ -27,7 +36,13 @@ public class Course<E> implements ICourse {
 		}
 	}
 
-	// Add this student to the linkedlist for enrolled students for this course.
+
+	/**
+	 * Adds student to class roster if its not full
+	 * and increments the number of students in the course.
+	 * 
+	 * @param name
+	 */
 	@Override
 	public void addStudent(String name) {
 		if(!isFull()) {
